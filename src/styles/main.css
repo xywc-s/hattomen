@@ -1,5 +1,5 @@
 @import './markdown.css';
-@import url('https://fonts.font.im/css?family=Open+Sans:400,400i,600');
+@import url('https://fonts.font.im/css?family=Open+Sans:400,400i,600,800');
 html,
 body,
 #app {
@@ -7,7 +7,7 @@ body,
   margin: 0;
   padding: 0;
   font-family:"Open Sans",Roboto,"Helvetica Neue",Helvetica,Optima,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 0.95rem;
 }
 

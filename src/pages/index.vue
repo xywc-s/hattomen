@@ -57,13 +57,13 @@ onMounted(() => {
           <el-col :span="6"></el-col>
         </el-row>
       </div>
-      <div class="h-container pt-8">
+      <div class="h-container py-16">
         <el-card>
           <el-row type="flex" class="justify-around py-8">
             <el-col v-for="serve in services" :span="8">
               <el-row type="flex" class="flex-col">
                 <el-image :src="serve.icon" class="h-35px"></el-image>
-                <span>{{ serve.title }}</span>
+                <span class="my-3">{{ serve.title }}</span>
                 <el-image v-if="serve.logo" fit="contain" :src="serve.logo" class="h-35px"></el-image>
               </el-row>
             </el-col>

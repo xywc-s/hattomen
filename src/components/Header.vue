@@ -24,20 +24,30 @@
       class="bg-gray-50 transition duration-500 hover:bg-opacity-80 ease-in-out bg-opacity-0"
     >
       <div class="h-container flex">
-        <img />
+        <!-- <img /> -->
+        <!-- <span>Hattomen</span> -->
         <ul class="flex">
-          <li class="btn mx-2.5 mt-6 pb-2 cursor-pointer" v-for="menu in menus">{{ menu }}</li>
+          <li class="mr-8 pb-2 text-4xl text-light-blue-500" style="line-height: 4rem;">
+            <span class="logo-font font-normal">HATTOMEN</span>
+          </li>
+          <li class="btn mx-2.5 mt-6 pb-2 cursor-pointer" v-for="menu in menus">
+            <router-link :to="`/product/${menu.path}`">{{ menu.name }}</router-link>
+          </li>
         </ul>
       </div>
     </div>
   </section>
 </template>
 <script setup lang="ts">
-import { reactive } from 'vue'
-const menus = reactive(['Hubs & Docks', 'Power Banks', 'Power Strips', 'Chargers', 'Other Products'])
+import { menus } from '~/data/nav';
+
 </script>
 
 <style scoped>
+@import url("https://fonts.font.im/css?family=Monoton|Fredericka+the+Great|Faster+One");
+.logo-font {
+  font-family: "Faster One", cursive;
+}
 .header {
   position: fixed;
   top: 0;

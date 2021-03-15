@@ -1,8 +1,8 @@
 export const banners = [
-  'https://pic.rmb.bdstatic.com/bjh/b5351a43b60c824f0c61a99d744318bb.jpeg',
-  'https://pic.rmb.bdstatic.com/bjh/00498d02dd5d1a3bf79b9ed93882b11a.jpeg',
-  'https://pic.rmb.bdstatic.com/bjh/ff4308873b100a01e95706cd4aa972e0.jpeg',
-  'https://pic.rmb.bdstatic.com/bjh/346fc7c33f122646aff5d96c0c7e00f9.jpeg'
+  'https://pic.rmb.bdstatic.com/bjh/174d138524d830e3560520136e670112.jpeg',
+  'https://pic.rmb.bdstatic.com/bjh/f893bfb55061245286fe1f86f7e6a496.jpeg',
+  'https://pic.rmb.bdstatic.com/bjh/076fbf732a5e7169fb2998a85cb6c101.jpeg',
+  'https://pic.rmb.bdstatic.com/bjh/ed83b34980472728eda5233ee261619f.jpeg'
 ]
 
 export const categorys = [
