@@ -21,7 +21,7 @@
     <div
       v-nav-scroll
       id="navbar"
-      class="bg-gray-50 transition duration-500 ease-in-out bg-opacity-0"
+      class="bg-gray-50 transition duration-500 hover:bg-opacity-80 ease-in-out bg-opacity-0"
     >
       <div class="h-container flex">
         <img />

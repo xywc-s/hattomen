@@ -22,7 +22,10 @@ export const install: UserModule = ({ app }) => {
       )
     },
     beforeUnmount(el){
-      removeEventListener('scroll')
+      removeEventListener('scroll',()=>{
+        console.log('srcoll event removed');
+        
+      })
     }
   })
 }
