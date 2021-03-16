@@ -27,8 +27,13 @@
         <!-- <img /> -->
         <!-- <span>Hattomen</span> -->
         <ul class="flex">
-          <li class="mr-8 pb-2 text-4xl text-light-blue-500" style="line-height: 4rem;">
-            <span class="logo-font font-normal">HATTOMEN</span>
+          <li
+            class="mr-8 pb-2 text-4xl text-light-blue-500 text-orange-400"
+            style="line-height: 4rem;"
+          >
+            <router-link to="/">
+              <span class="logo-font font-normal">HATTOMEN</span>
+            </router-link>
           </li>
           <li class="btn mx-2.5 mt-6 pb-2 cursor-pointer" v-for="menu in menus">
             <router-link :to="`/product/${menu.path}`">{{ menu.name }}</router-link>

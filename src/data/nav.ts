@@ -1,26 +1,26 @@
 export const menus = [
   {
     name: 'Bypass Lopper',
-    path: 'bypasslopper'
+    path: 'bypass-lopper'
   },
   {
     name: 'Hedge Shears',
-    path: 'hedgeshears'
+    path: 'hedge-shears'
   },
   {
     name: 'Electric Snow Blower',
-    path: 'electricsnowblower'
+    path: 'electric-snow-blower'
   },
   {
     name: 'Electric Lawn Mower',
-    path: 'electriclawnmower'
+    path: 'electric-lawn-mower'
   },
   {
     name: 'Electric Garden Tiller',
-    path: 'electricgardentiller'
+    path: 'electric-garden-tiller'
   },
   {
     name: 'Garden Cart',
-    path: 'gardencart'
+    path: 'garden-cart'
   }
 ]

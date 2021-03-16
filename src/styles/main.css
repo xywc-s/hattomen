@@ -38,12 +38,12 @@ html.dark {
 
 .btn{
   @apply cursor-pointer opacity-75 transition duration-200 ease-in-out
-    hover:opacity-100 hover:text-light-blue-500;
+    hover:opacity-100 hover:text-orange-500;
 }
 
 .icon-btn {
   @apply inline-block cursor-pointer select-none
     opacity-75 transition duration-200 ease-in-out
-    hover:opacity-100 hover:text-light-blue-500 mx-1.4;
+    hover:opacity-100 hover:text-orange-500 mx-1.4;
 }
 

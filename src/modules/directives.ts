@@ -28,4 +28,18 @@ export const install: UserModule = ({ app }) => {
       })
     }
   })
+
+  app.directive('preview', {
+    mounted(el, binding, vnode){
+      el.addEventListener('mouseover',()=>{
+        const _current =document.querySelector('.active-img .el-image__inner')
+        _current.src = binding.value
+      })
+    },
+    beforeUnmount(el){
+      removeEventListener('mouseover',()=>{
+        console.log('mouseover event removed');
+      })
+    }
+  })
 }

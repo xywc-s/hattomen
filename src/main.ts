@@ -1,9 +1,11 @@
+import 'element-plus/lib/theme-chalk/base.css'
 import { setupLayouts } from 'layouts-generated'
 import generatedRoutes from 'pages-generated'
 import { ViteSSG } from 'vite-ssg'
 import 'windi.css'
 import App from './App.vue'
 import './styles/main.css'
+
 
 const routes = setupLayouts(generatedRoutes)
 
