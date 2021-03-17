@@ -12,9 +12,9 @@
             <div>{{ feature.desc }}</div>
           </el-col>
         </template>
-        <el-col v-else :span="7" class="my-6">
+        <el-col v-else :span="7" class="my-6 text-left">
           <el-image class="w-full" :src="feature.img"></el-image>
-          <div class="font-extrabold">{{ feature.title }}</div>
+          <div class="font-extrabold my-2">{{ feature.title }}</div>
           <div>{{ feature.desc }}</div>
         </el-col>
       </template>

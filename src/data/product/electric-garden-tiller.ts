@@ -1,5 +1,6 @@
 export default {
   name: 'Electric Garden Tiller',
+  category:`Patio, Lawn & Garden › Outdoor Power Tools › Tillers`,
   title: 'Hattomen Electric Garden Tiller, 8.5 Amp Electric Cultivator, 14 Inch Tilling Width, 8 Inch Working Depth, for Garden, Lawn, Digging, Weed Removal, Soil Cultivation ',
   points: [
     'Versatile: Can be used in vegetable gardens, orchard gardens, greenhouse, flowerbeds etc.',

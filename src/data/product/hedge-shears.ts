@@ -1,5 +1,6 @@
 export default {
   name: 'Hedge Shears',
+  category: `Patio, Lawn & Garden › Gardening & Lawn Care›Hand Tools › Shears & Scissors › Hedge Clippers & Shears`,
   title: 'Hattomen Hedge Shears, 26 Inch Ideal for Shaping Hedges, Decorative Shrubs, with 8 Inch Wavy Blades and Double-Teflon Coating, for Trimming Borders, Boxwood, and Bushes',
   points: [
     'COMFORTABLE DURABLE STEEL HANDLES - The ergonomic handle is made of tubular steel construction and TPR non-slip rubber. TPR grips are comfortable for holding and steel construction provides lasting durability. Soft-grip touch points enhance comfort and control.',

@@ -1,5 +1,6 @@
 export default {
   name: 'Electric Lawn Mower',
+  category: `Patio, Lawn & Garden › Outdoor Power Tools › Lawn Mowers & Tractors › Walk-Behind Lawn Mowers`,
   title: 'Hattomen Lawn Mower, 12 Inch Working Width, 11 Amp Electric Lawn Mower With a Replacement Raking, 4 Central Adjustable Cutting Heights, Tool-Free Assembly, 8 Gallon Grass Collection Bag ',
   points: [
     'Powerful: 11 amp motor and 12 inch blade which improved large-size metal steel to ensure efficient cutting; 8 gallon large-capacity grass collection box, 95% grass harvest rate.',
@@ -64,12 +65,12 @@ export default {
       },
       {
         title: 'Ergonomic switch',
-        desc: 'Easy one-handed control of the switch, and the clever design keeps your hand from leaving the grip. Not only easy to control but also very safe.',
+        desc: `Easy one-handed control of the switch, and the clever design keeps your hand from leaving the grip. Not only easy to control but also very safe.`,
         img:'https://pic.rmb.bdstatic.com/bjh/376da6ede4e57e7597b435876cdab1d6.png'
       },
       {
         title: 'Hattomen Lawn Mower',
-        desc: 'This mower weighs in at only 22 lbs cutting deck that’s easy to zip around landscaped features, yet wide enough to cut down on the passes you’ll have to make on your lawn. 4 Working depth (-0.35"/-0.24/-0.12"/0.12"). It’s a better mower for today, tomorrow, and years to come.',
+        desc: `This mower weighs in at only 22 lbs cutting deck that’s easy to zip around landscaped features, yet wide enough to cut down on the passes you’ll have to make on your lawn. 4 Working depth (-0.35"/-0.24/-0.12"/0.12"). It’s a better mower for today, tomorrow, and years to come.`,
         img:'https://pic.rmb.bdstatic.com/bjh/2e32c8fde977f139a1ac9d0c7e3f8797.png'
       },
       {

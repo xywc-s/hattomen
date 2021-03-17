@@ -1,5 +1,6 @@
 export default {
   name: 'Bypass Lopper',
+  category: `Patio, Lawn & Garden › Gardening & Lawn Care›Hand Tools › Loppers`,
   title: 'Hattomen Bypass Lopper with Compound Action, Chops Thick Branches with Ease, 30 Inch Tree Trimmer, Hand Loppers with 1.75" Cutting Capacity Tree Pruner',
   points: [
     'Cart is 35" high from the floor to the handle, 18" wide, and 14" deep.',

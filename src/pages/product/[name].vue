@@ -1,5 +1,8 @@
 <template>
-  <section class="bg-gray-50 pt-30 pb-10">
+  <section class="bg-gray-50 pb-10">
+    <div class="h-container pt-25 pb-5">
+      <div class="text-left" v-html="product.category"></div>
+    </div>
     <el-row class="h-container">
       <el-col :span="11">
         <div class="flex">
@@ -50,16 +53,25 @@
     </el-row>
   </section>
   <section class="bg-white">
-    <div class="h-container py-10">
-      <el-image v-if="product.details.headImg" class="w-full" :src="product.details.headImg"></el-image>
-      <el-row class="mx-20" type="flex" justify="space-around">
-        <el-col v-for="feature in product.details.features" :span="7" class="my-6">
-          <el-image class="w-full" :src="feature.img"></el-image>
-          <div class="font-extrabold">{{ feature.title }}</div>
-          <div>{{ feature.desc }}</div>
-        </el-col>
-      </el-row>
-    </div>
+    <component :is="props.name" :details="product.details"></component>
+    <template v-if="props.name === 'bypass-lopper'">
+      <bypass-lopper :details="product.details"></bypass-lopper>
+    </template>
+    <template v-else-if="props.name === 'hedge-shears'">
+      <hedge-shears :details="product.details"></hedge-shears>
+    </template>
+    <template v-else-if="props.name === 'electric-snow-blower'">
+      <electric-snow-blower :details="product.details"></electric-snow-blower>
+    </template>
+    <template v-else-if="props.name === 'electric-lawn-mower'">
+      <electric-lawn-mower :details="product.details"></electric-lawn-mower>
+    </template>
+    <template v-else-if="props.name === 'electric-garden-tiller'">
+      <electric-garden-tiller :details="product.details"></electric-garden-tiller>
+    </template>
+    <template v-else-if="props.name === 'garden-cart'">
+      <garden-cart :details="product.details"></garden-cart>
+    </template>
     <div class="h-container py-10">
       <div>
         <div class="text-3xl">Reviews</div>
@@ -101,6 +113,7 @@ let product = reactive(current)
 
 onBeforeUpdate(() => {
   product.name = Products[props.name].name
+  product.category = Products[props.name].category
   product.title = Products[props.name].title
   product.price = Products[props.name].price
   product.ratings = Products[props.name].ratings

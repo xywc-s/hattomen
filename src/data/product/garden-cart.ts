@@ -1,5 +1,6 @@
 export default {
   name: 'All Purpose Garden Cart',
+  category: `Patio, Lawn & Garden › Gardening & Lawn Care › Outdoor Carts › Garden Carts`,
   title: 'Hattomen All Purpose Garden Cart, Light Weight, 100 Lbs Weight Capacity For Snow, Leaves, Waste and Trash Collection',
   points: [
     'Cart is 35" high from the floor to the handle, 18" wide, and 14" deep.',

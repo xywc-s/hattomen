@@ -1,5 +1,6 @@
 export default {
   name: 'Electric Snow Blower',
+  category: `Patio, Lawn & Garden › Snow Removal › Snow Blowers`,
   title: 'Hattomen Snow Thrower, 18 Inch Electric Snow Blower, 13 Amp, Steel Auger, 180° Rotatable Chute, Overload Protection',
   points: [
     '1600 Watt motor delivers powerful results for gas alternative.',
@@ -65,20 +66,21 @@ export default {
     features: [
       {
         title: 'Hattomen Electric Snow Throwers',
-        desc: `Our engineers have maxed out this model with the most power and widest clearing width. 
-
-        The 13-amp unit is ideal for clearing large driveways and walkways without the hassle of gas, oil, tune-ups, frustrating pull-cords or tangled extension cords, and starts instantly and reliably with the push of a button.
-        
-        Equipped with a heavy-duty, steel auger with blades, It moves up to 500 pounds of snow per minute, clearing a path 16-inches wide by 7-inches deep with each pass
-        
-        右侧
-        Throwing Distance: 13 feet
-        Power: 1600W 13Amp
-        No load Speed: 2000
-        Voltage: 230V~50Hz
-        Net Weight: 28lb
-        Working Width: 16inch
-        Working Depth: 7inch`,
+        desc: `Our engineers have maxed out this model with the most power and widest clearing width. <br>
+        <br>
+        The 13-amp unit is ideal for clearing large driveways and walkways without the hassle of gas, oil, tune-ups, frustrating pull-cords or tangled extension cords, and starts instantly and reliably with the push of a button.<br>
+        <br>
+        Equipped with a heavy-duty, steel auger with blades, It moves up to 500 pounds of snow per minute, clearing a path 16-inches wide by 7-inches deep with each pass.<br>
+        <br>`,
+        specifications: [
+          'Throwing Distance: 13 feet',
+          'Power: 1600W 13Amp',
+          'No load Speed: 2000',
+          'Voltage: 230V~50Hz',
+          'Net Weight: 28lb',
+          'Working Width: 16inch',
+          'Working Depth: 7inch'
+        ],
         img:'https://pic.rmb.bdstatic.com/bjh/37dd12a46cee768ed8f7d57b71bd78b5.png'
       },
       {
