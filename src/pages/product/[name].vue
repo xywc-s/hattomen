@@ -51,11 +51,11 @@
   </section>
   <section class="bg-white">
     <div class="h-container py-10">
-      <el-image class="w-full" :src="product.details.headImg"></el-image>
+      <el-image v-if="product.details.headImg" class="w-full" :src="product.details.headImg"></el-image>
       <el-row class="mx-20" type="flex" justify="space-around">
         <el-col v-for="feature in product.details.features" :span="7" class="my-6">
           <el-image class="w-full" :src="feature.img"></el-image>
-          <div>{{ feature.title }}</div>
+          <div class="font-extrabold">{{ feature.title }}</div>
           <div>{{ feature.desc }}</div>
         </el-col>
       </el-row>
@@ -78,7 +78,7 @@
             <el-rate :modelValue="5" disabled></el-rate>
             <span>5.0</span>
           </div>
-          <div class="text-sm text-gray-500">{{ review.content }}</div>
+          <div class="text-sm text-gray-500" v-html="review.content"></div>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref, reactive } from 'vue'
+import { defineProps, ref, reactive, onBeforeUpdate } from 'vue'
 import { Products } from '~/data/product'
 const props = defineProps({
   name: {
@@ -95,7 +95,20 @@ const props = defineProps({
   }
 })
 let cart_number = ref(1)
-const product = reactive(Products[props.name])
+let current = Object.assign({}, Products[props.name])
+let product = reactive(current)
+
+
+onBeforeUpdate(() => {
+  product.name = Products[props.name].name
+  product.title = Products[props.name].title
+  product.price = Products[props.name].price
+  product.ratings = Products[props.name].ratings
+  product.images = Products[props.name].images
+  product.points = Products[props.name].points
+  product.reviews = Products[props.name].reviews
+  product.details = Products[props.name].details
+})
 
 </script>
 

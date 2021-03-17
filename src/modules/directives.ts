@@ -30,10 +30,10 @@ export const install: UserModule = ({ app }) => {
   })
 
   app.directive('preview', {
-    mounted(el, binding, vnode){
+    mounted(el){
       el.addEventListener('mouseover',()=>{
         const _current =document.querySelector('.active-img .el-image__inner')
-        _current.src = binding.value
+        _current.src = el.children[0].src
       })
     },
     beforeUnmount(el){

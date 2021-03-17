@@ -8,21 +8,21 @@ export const banners = [
 export const categorys = [
   {
     title: 'Free Product Testing',
-    image: 'https://pic.rmb.bdstatic.com/bjh/5438f95f6c4ca8897f83676028558ed1.jpeg'
+    image: 'https://pic.rmb.bdstatic.com/bjh/ee1d21393216ea32577f533aacde8d50.jpeg'
   },
   {
     title: 'New Releases',
-    image: 'https://pic.rmb.bdstatic.com/bjh/296d631a470ec2f1d3d5782f5820553d.jpeg'
+    image: 'https://pic.rmb.bdstatic.com/bjh/3899523ab8b13275eb4548e2e04cf8b5.jpeg'
   },
   {
     title: 'Hot Deals',
-    image: 'https://pic.rmb.bdstatic.com/bjh/91add084c949343fe5b766bbdafd9299.jpeg'
+    image: 'https://pic.rmb.bdstatic.com/bjh/3064bd2efeae6a6999c42047d8e20aac.jpeg'
   }
 ]
 
 export const news_product = [
-  'https://pic.rmb.bdstatic.com/bjh/61c878fa6bdf6e1a2fec3dcbc8b0f0ab.jpeg',
-  'https://pic.rmb.bdstatic.com/bjh/2f3e43e25ca005b8d904adbd204dc279.jpeg'
+  'https://pic.rmb.bdstatic.com/bjh/4cc9881049f5a34732037d4614f71f6f.jpeg',
+  'https://pic.rmb.bdstatic.com/bjh/48cc080c18be7ec30c38b737dd142be4.jpeg'
 ]
 
 export const services = [

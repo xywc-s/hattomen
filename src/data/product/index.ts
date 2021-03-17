@@ -19,20 +19,28 @@ export interface IReview {
   content: string
 }
 
-interface IFeature {
+export interface IFeature {
   title: string,
   desc: string,
   img: string
 }
 
-interface IProducts {
+export interface IProducts {
   [index:string]: IProduct
 }
 
 import BypassLopper from './bypass-lopper'
+import ElectricGardenTiller from './electric-garden-tiller'
+import ElectricLawnMower from './electric-lawn-mower'
+import ElectricSnowBlower from './electric-snow-blower'
+import GardenCart from './garden-cart'
+import HedgeShears from './hedge-shears'
 
-const Products: IProducts = {
-  'bypass-lopper': BypassLopper
+export const Products: IProducts = {
+  'bypass-lopper': BypassLopper,
+  'hedge-shears': HedgeShears,
+  'garden-cart': GardenCart,
+  'electric-snow-blower': ElectricSnowBlower,
+  'electric-lawn-mower': ElectricLawnMower,
+  'electric-garden-tiller': ElectricGardenTiller
 }
-export { Products }
-
