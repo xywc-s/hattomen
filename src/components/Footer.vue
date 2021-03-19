@@ -5,7 +5,7 @@ const year = new Date().getFullYear()
 </script>
 
 <template>
-  <div>
+  <div style="background-color: #1e1e1e;">
     <div class="about h-container py-8">
       <el-row type="flex" class="h-container">
         <el-col :span="18">
