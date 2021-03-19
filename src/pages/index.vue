@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onBeforeMount } from 'vue'
 import { banners, categorys, news_product } from '~/data'
 
-onMounted(() => {
+function styleInit() {
   const el = document.querySelector('.el-carousel__container');
-  el.style.paddingBottom = '44.7917%';
+  if (el)
+    el.style.paddingBottom = '44.7917%';
+  else styleInit();
+}
+
+onBeforeMount(() => {
+  styleInit()
 })
 
 </script>
