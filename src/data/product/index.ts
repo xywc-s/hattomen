@@ -30,11 +30,13 @@ export interface IProducts {
   [index:string]: IProduct
 }
 
+import foldingHandSaw from '~/data/product/folding-hand-saw'
 import BypassLopper from './bypass-lopper'
 import ElectricGardenTiller from './electric-garden-tiller'
 import ElectricLawnMower from './electric-lawn-mower'
 import ElectricSnowBlower from './electric-snow-blower'
 import GardenCart from './garden-cart'
+import HandSaw from './hand-saw'
 import HedgeShears from './hedge-shears'
 
 export const Products: IProducts = {
@@ -43,5 +45,7 @@ export const Products: IProducts = {
   'garden-cart': GardenCart,
   'electric-snow-blower': ElectricSnowBlower,
   'electric-lawn-mower': ElectricLawnMower,
-  'electric-garden-tiller': ElectricGardenTiller
+  'electric-garden-tiller': ElectricGardenTiller,
+  'hand-saw': HandSaw,
+  'folding-hand-saw': foldingHandSaw
 }

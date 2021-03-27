@@ -1,5 +1,5 @@
 dependencies:
-  '@vueuse/core': 4.3.4_vue@3.0.7
+  '@vueuse/core': 4.6.2_vue@3.0.7
   '@vueuse/head': 0.3.2_vue@3.0.7
   element-plus: 1.0.2-beta.33_vue@3.0.7
   lodash-es: 4.17.21
@@ -12,6 +12,7 @@ devDependencies:
   '@antfu/eslint-config': 0.4.3_eslint@7.21.0+typescript@4.2.3
   '@iconify/json': 1.1.314
   '@intlify/vite-plugin-vue-i18n': 2.0.1
+  '@tailwindcss/aspect-ratio': 0.2.0
   '@types/nprogress': 0.2.0
   '@typescript-eslint/eslint-plugin': 4.17.0_eslint@7.21.0+typescript@4.2.3
   '@vitejs/plugin-vue': 1.1.5_@vue+compiler-sfc@3.0.7
@@ -1290,6 +1291,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-yBMPqmd1yEJo/280PAMkychuaALyQ9Lkb5q1ck3mjJrFuEobIfhnQ4J3mbvBoISmR3SWMWV+cGB/I0lCQee79A==
+  /@tailwindcss/aspect-ratio/0.2.0:
+    dev: true
+    resolution:
+      integrity: sha512-v5LyHkwXj/4lI74B06zUrmWEdmSqS43+jw717pkt3fAXqb7ALwu77A8t7j+Bej+ZbdlIIqNMYheGN7wSGV1A6w==
   /@types/estree/0.0.39:
     dev: true
     resolution:
@@ -1540,15 +1545,15 @@ packages:
   /@vue/shared/3.0.7:
     resolution:
       integrity: sha512-dn5FyfSc4ky424jH4FntiHno7Ss5yLkqKNmM/NXwANRnlkmqu74pnGetexDFVG5phMk9/FhwovUZCWGxsotVKg==
-  /@vueuse/core/4.3.4_vue@3.0.7:
+  /@vueuse/core/4.6.2_vue@3.0.7:
     dependencies:
-      '@vueuse/shared': 4.3.4_vue@3.0.7
-      vue-demi: 0.7.1_vue@3.0.7
+      '@vueuse/shared': 4.6.2_vue@3.0.7
+      vue-demi: 0.7.4_vue@3.0.7
     dev: false
     peerDependencies:
       vue: '*'
     resolution:
-      integrity: sha512-OKMJNdQltsMu8l9MMQ0qvjKK4kO5x0tHveqn6ypWcSQ/NSSMRcUynbE4G404DM52Adg3aFtgrirXcM4uoM6cjg==
+      integrity: sha512-FNI3qYazSrh4HReffs41qUl9ptu3HGe6Jn5ttGcfg3WHuHqhPV8VdhSWEO4wCx+rm131ta4CMGN7TNN54pTODw==
   /@vueuse/head/0.3.2_vue@3.0.7:
     dependencies:
       vue: 3.0.7
@@ -1557,14 +1562,14 @@ packages:
       vue: '>=3'
     resolution:
       integrity: sha512-H2sWLeyaZLWeRcZjmpUtgWuUMJINQcW2J8wI3nyRhJbLI+W0t//g41YLppYGxjsb7tfqVREZgyXUWZRGMpwPQg==
-  /@vueuse/shared/4.3.4_vue@3.0.7:
+  /@vueuse/shared/4.6.2_vue@3.0.7:
     dependencies:
-      vue-demi: 0.7.1_vue@3.0.7
+      vue-demi: 0.7.4_vue@3.0.7
     dev: false
     peerDependencies:
       vue: '*'
     resolution:
-      integrity: sha512-O1PxiG8cSD4YQKHJXWAeBVVTJNpBwCse7TkTsMqqLzqOjP2apbncfPzOcYJHVR5NkUXmtvPBIWAQuRavXKmHSw==
+      integrity: sha512-niGuwfS9QjRhA44qopwczanH0u8TUgkgmUnTsOAz9a+iwGIxOK3ImpX1iCW7Dshqkz3YhPtmpycOrwF07s5jIQ==
   /@windicss/plugin-utils/0.7.2:
     dependencies:
       esbuild: 0.8.57
@@ -4235,10 +4240,10 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
-  /queue-microtask/1.2.2:
+  /queue-microtask/1.2.3:
     dev: true
     resolution:
-      integrity: sha512-dB15eXv3p2jDlbOiNLyMabYg1/sXvppd8DP2J3EOCQ0AkuSXCW2tP7mnVouVLJKgUMY6yP0kcQDVpLCN13h4Xg==
+      integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
   /randombytes/2.1.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -4492,7 +4497,7 @@ packages:
       integrity: sha512-Gk76XHTggulWPH95q8V62bw6uqDH6UGvbD6LOa3QUyhuMF3eOuaeDHR7SLm1T9faitkpNrqzUAVYx47klcMnlA==
   /run-parallel/1.2.0:
     dependencies:
-      queue-microtask: 1.2.2
+      queue-microtask: 1.2.3
     dev: true
     resolution:
       integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==
@@ -5211,7 +5216,7 @@ packages:
       fsevents: 2.3.2
     resolution:
       integrity: sha512-QTgEDbq1WsTtr6j+++ewjhBFEk6c8v0xz4fb/OWJQKNYU8ZZtphOshwOqAlnarSstPBtWCBR0tsugXx6ajfoUg==
-  /vue-demi/0.7.1_vue@3.0.7:
+  /vue-demi/0.7.4_vue@3.0.7:
     dependencies:
       vue: 3.0.7
     dev: false
@@ -5224,7 +5229,7 @@ packages:
         optional: true
     requiresBuild: true
     resolution:
-      integrity: sha512-cJ3QnpcbIqdpeV3NnNgSDwneCJifvHct+6JNvfYn/49geK/uv5VJicZDvyg20guNhz+DZmUHBHyRQTJ32lSC2g==
+      integrity: sha512-PT0qzI9Rp8R8eUAsTPXADC+KAZdrMufmbZqEMMqvaiesWyjCpgyuuvS5Su8cvBjK9RevLT/YfFiKWxc8YB9/8g==
   /vue-eslint-parser/7.6.0_eslint@7.21.0:
     dependencies:
       debug: 4.3.1
@@ -5630,12 +5635,13 @@ specifiers:
   '@antfu/eslint-config': ^0.4.3
   '@iconify/json': ^1.1.314
   '@intlify/vite-plugin-vue-i18n': ^2.0.1
+  '@tailwindcss/aspect-ratio': ^0.2.0
   '@types/nprogress': ^0.2.0
   '@typescript-eslint/eslint-plugin': ^4.17.0
   '@vitejs/plugin-vue': ^1.1.5
   '@vue/compiler-sfc': ^3.0.7
   '@vue/server-renderer': ^3.0.7
-  '@vueuse/core': ^4.3.4
+  '@vueuse/core': ^4.6.2
   '@vueuse/head': ^0.3.2
   cross-env: ^7.0.3
   element-plus: ^1.0.2-beta.33

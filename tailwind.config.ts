@@ -1,11 +1,13 @@
 import { defineConfig } from 'vite-plugin-windicss'
 import colors from 'windicss/colors'
+import aspectRatio from 'windicss/plugin/aspect-ratio'
 import typography from 'windicss/plugin/typography'
 
 export default defineConfig({
   darkMode: 'class',
   plugins: [
     typography(),
+    aspectRatio
   ],
   theme: {
     extend: {

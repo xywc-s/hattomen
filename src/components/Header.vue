@@ -21,22 +21,37 @@
     <div
       v-nav-scroll
       id="navbar"
-      class="bg-gray-50 transition duration-500 hover:bg-opacity-80 ease-in-out bg-opacity-0"
+      class="relative bg-gray-50 transition duration-500 hover:bg-opacity-100 ease-in-out bg-opacity-0"
     >
-      <div class="h-container flex">
-        <!-- <img /> -->
-        <!-- <span>Hattomen</span> -->
+      <div class="h-container -md:hidden">
         <ul class="flex">
-          <li
-            class="mr-8 pb-2 text-4xl text-light-blue-500 text-orange-400"
-            style="line-height: 4rem;"
-          >
+          <li class="mr-8 pb-2 text-4xl text-orange-400" style="line-height: 4rem;">
             <router-link to="/">
-              <span class="logo-font font-normal">HATTOMEN</span>
+              <span :class="mdAndLarger ? 'font-faster font-normal' : ''">HATTOMEN</span>
             </router-link>
           </li>
-          <li class="btn mx-2.5 mt-6 pb-2 cursor-pointer" v-for="menu in menus">
-            <router-link :to="`/product/${menu.path}`">{{ menu.name }}</router-link>
+          <li class="btn group mx-2.5 mt-6 pb-2 cursor-pointer">
+            <span>Home</span>
+          </li>
+          <li class="btn group mx-2.5 mt-6 pb-2 cursor-pointer">
+            <span>Introduction</span>
+          </li>
+          <li class="btn group mx-2.5 mt-6 pb-2 cursor-pointer" v-for="menu in menus">
+            <span @mouseover.self="menuHover(menu)">{{ menu.name }}</span>
+            <div class="hidden absolute inset-x-0 t-0 py-7 bg-gray-50 group-hover:block">
+              <div class="flex">
+                <div class="min-w-1/3"></div>
+                <div class="ml-3/10">
+                  <div v-for="child in menu.children" @mouseover="btnHover(child)">
+                    <router-link
+                      :to="`/product/${child.path}`"
+                      class="block text-black btn py-1 text-left"
+                    >{{ child.name }}</router-link>
+                  </div>
+                </div>
+                <el-image class="ml-30 min-w-50" :src="currentImg"></el-image>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -45,14 +60,37 @@
 </template>
 <script setup lang="ts">
 import { menus } from '~/data/nav';
+import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
+import { ref } from 'vue'
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+
+const mdAndLarger = breakpoints.greater('md')
+
+const currentImg = ref('')
+
+const menuHover = (menu) => {
+  console.log('menu', menu.children[0].img);
+  console.log('menu', menu);
+
+  currentImg.value = menu.children[0].img
+}
+
+const btnHover = (child) => {
+  console.log('child', child.img);
+
+  currentImg.value = child.img
+}
 
 </script>
 
 <style scoped>
 @import url("https://fonts.font.im/css?family=Monoton|Fredericka+the+Great|Faster+One");
-.logo-font {
+
+.font-faster {
   font-family: "Faster One", cursive;
 }
+
 .header {
   position: fixed;
   top: 0;

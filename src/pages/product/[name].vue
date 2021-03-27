@@ -53,7 +53,7 @@
     </el-row>
   </section>
   <section class="bg-white">
-    <component :is="props.name" :details="product.details"></component>
+    <!-- <component :is="props.name" :details="product.details"></component> -->
     <template v-if="props.name === 'bypass-lopper'">
       <bypass-lopper :details="product.details"></bypass-lopper>
     </template>
@@ -72,6 +72,13 @@
     <template v-else-if="props.name === 'garden-cart'">
       <garden-cart :details="product.details"></garden-cart>
     </template>
+    <template v-else-if="props.name === 'hand-saw'">
+      <hand-saw :details="product.details"></hand-saw>
+    </template>
+    <template v-else-if="props.name === 'folding-hand-saw'">
+      <folding-hand-saw :details="product.details"></folding-hand-saw>
+    </template>
+
     <div class="h-container py-10">
       <div>
         <div class="text-3xl">Reviews</div>
