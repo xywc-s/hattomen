@@ -70,15 +70,10 @@ const mdAndLarger = breakpoints.greater('md')
 const currentImg = ref('')
 
 const menuHover = (menu) => {
-  console.log('menu', menu.children[0].img);
-  console.log('menu', menu);
-
   currentImg.value = menu.children[0].img
 }
 
 const btnHover = (child) => {
-  console.log('child', child.img);
-
   currentImg.value = child.img
 }
 
