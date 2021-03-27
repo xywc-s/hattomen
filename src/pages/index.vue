@@ -1,11 +1,5 @@
 <script setup lang="ts">
-// import { onMounted } from 'vue'
 import { banners, categorys, news_product } from '~/data'
-
-// onMounted(() => {
-//   const el = document.querySelector('.el-carousel__container') as HTMLElement;
-//   el.style.paddingBottom = '44.7917%'
-// })
 
 </script>
 
