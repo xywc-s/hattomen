@@ -30,6 +30,8 @@ export interface IProducts {
   [index:string]: IProduct
 }
 
+import extendableAnvilLoppers from '~/data/product/extendable-anvil-loppers'
+import extendableHedgeShears from '~/data/product/extendable-hedge-shears'
 import foldingHandSaw from '~/data/product/folding-hand-saw'
 import BypassLopper from './bypass-lopper'
 import ElectricGardenTiller from './electric-garden-tiller'
@@ -47,5 +49,7 @@ export const Products: IProducts = {
   'electric-lawn-mower': ElectricLawnMower,
   'electric-garden-tiller': ElectricGardenTiller,
   'hand-saw': HandSaw,
-  'folding-hand-saw': foldingHandSaw
+  'folding-hand-saw': foldingHandSaw,
+  'extendable-hedge-shears': extendableHedgeShears,
+  'extendable-anvil-loppers': extendableAnvilLoppers
 }

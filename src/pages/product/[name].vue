@@ -78,6 +78,12 @@
     <template v-else-if="props.name === 'folding-hand-saw'">
       <folding-hand-saw :details="product.details"></folding-hand-saw>
     </template>
+    <template v-else-if="props.name === 'extendable-hedge-shears'">
+      <extendable-hedge-shears :details="product.details"></extendable-hedge-shears>
+    </template>
+    <template v-else-if="props.name === 'extendable-anvil-loppers'">
+      <extendable-anvil-loppers :details="product.details"></extendable-anvil-loppers>
+    </template>
 
     <div class="h-container py-10">
       <div>

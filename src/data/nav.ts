@@ -9,7 +9,7 @@ export const menus = [
       },
       {
         name: 'Extendable Hedge Shears',
-        path: 'hedge-shears',
+        path: 'extendable-hedge-shears',
         img: 'https://pic.rmb.bdstatic.com/bjh/8fffe8806fb27330060457e2d4d12f2f.png'
       },
     ]
@@ -24,7 +24,7 @@ export const menus = [
       },
       {
         name: 'Extendable Anvil Loppers',
-        path: 'bypass-lopper',
+        path: 'extendable-anvil-loppers',
         img: 'https://pic.rmb.bdstatic.com/bjh/06e51689e3f2bdb9e434a50c41a98e3d.png'
       },
     ]
