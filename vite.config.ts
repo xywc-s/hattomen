@@ -7,6 +7,7 @@ import ViteComponents from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
+import { VitePWA } from 'vite-plugin-pwa'
 import Layouts from 'vite-plugin-vue-layouts'
 import WindiCSS from 'vite-plugin-windicss'
 
@@ -94,6 +95,10 @@ export default defineConfig({
     VueI18n({
       include: [path.resolve(__dirname, 'locales/**')],
     }),
+
+    VitePWA({
+      registerType: 'autoUpdate', 
+    })
   ],
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
