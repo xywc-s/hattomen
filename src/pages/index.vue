@@ -22,7 +22,7 @@ import { banners, categorys, news_product } from '~/data'
       <el-row type="flex" class="h-container pt-5 justify-around">
         <el-col :span="20">
           <el-divider>
-            <span class="font-semibold uppercase text-xl">What's new</span>
+            <span class="font-semibold uppercase sm:text-xl">What's new</span>
           </el-divider>
         </el-col>
       </el-row>

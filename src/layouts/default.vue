@@ -1,5 +1,5 @@
 <template>
-  <header id="header">
+  <header id="header" class="h-48px md:h-38px">
     <Header></Header>
   </header>
   <main>
@@ -11,6 +11,5 @@
 <style scoped>
 #header {
   position: relative;
-  height: 38px;
 }
 </style>

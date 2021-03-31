@@ -1,10 +1,10 @@
 <template>
-  <section class="bg-gray-50 pb-10">
-    <div class="h-container pt-25 pb-5">
+  <section class="bg-gray-50 pb-10 -sm:px-3">
+    <div class="h-container pt-5 md:pt-25 pb-5">
       <div class="text-left" v-html="product.category"></div>
     </div>
     <el-row class="h-container">
-      <el-col :span="11">
+      <el-col :span="smaller ? 24 : 11">
         <div class="flex">
           <div class="flex flex-col max-w-58px mr-2">
             <el-image
@@ -19,13 +19,23 @@
           </div>
         </div>
       </el-col>
-      <el-col :span="12" :offset="1" class="text-left">
-        <el-row type="flex" class="flex-col">
+      <el-col :span="smaller ? 24 : 12" :offset="smaller ? 0 : 1" class="text-left">
+        <el-row type="flex" class="flex-col all-child:mt-3">
           <!-- {{ product }} -->
-          <p class="text-4xl font-extrabold">{{ product.name }}</p>
-          <p class="text-xl my-5 text-gray-500">{{ product.title }}</p>
+          <div class="-sm:text-xl sm:text-4xl font-extrabold">{{ product.name }}</div>
+          <div class="sm:hidden flex items-center">
+            <span class="text-xl mr-3 align-middle">${{ product.price }}</span>
+            <el-rate
+              class="text-xl"
+              :modelValue="5"
+              disabled
+              show-score
+              :score-template="`{value} (${product.reviews.length} Reviews) `"
+            ></el-rate>
+          </div>
+          <div class="sm:text-xl text-gray-500">{{ product.title }}</div>
           <el-rate
-            class="mb-3 font-lg"
+            class="-sm:hidden"
             :modelValue="5"
             disabled
             show-score
@@ -35,17 +45,17 @@
             <span class="text-lg">·</span>
             {{ point }}
           </span>
-          <span class="text-xl my-3">${{ product.price }}</span>
-          <div class="mb-8">
+          <span class="text-xl -sm:hidden">${{ product.price }}</span>
+          <div>
             <span class="mr-4">Quantity :</span>
             <el-input-number v-model="cart_number" :min="1"></el-input-number>
           </div>
-          <div>
+          <div class="flex">
             <button
-              class="rounded-full w-180px text-orange-500 bg-orange-300 font-semibold border-1 border-orange-600 py-2 px-10 mr-5 hover:bg-opacity-80"
+              class="-md:py-1 -md:px-5 -md:flex-grow -md:flex-shrink md:px-10 md:py-2 md:w-180px rounded-full text-orange-500 bg-orange-300 font-semibold border-1 border-orange-600 mr-5 hover:bg-opacity-80"
             >ADD TO CART</button>
             <button
-              class="rounded-full w-180px bg-orange-500 text-white font-semibold py-2 px-10 hover:bg-opacity-80"
+              class="-md:py-1 -md:px-5 -md:flex-grow -md:flex-shrink md:px-10 md:py-2 md:w-180px rounded-full bg-orange-500 text-white font-semibold hover:bg-opacity-80"
             >BUY NOW</button>
           </div>
         </el-row>
@@ -85,7 +95,7 @@
       <extendable-anvil-loppers :details="product.details"></extendable-anvil-loppers>
     </template>
 
-    <div class="h-container py-10">
+    <div class="h-container py-10 -xl:px-4">
       <div>
         <div class="text-3xl">Reviews</div>
         <el-rate
@@ -113,6 +123,12 @@
 <script setup lang="ts">
 import { defineProps, ref, reactive, onBeforeUpdate } from 'vue'
 import { Products } from '~/data/product'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+
+const breakPoints = useBreakpoints(breakpointsTailwind);
+const smaller = breakPoints.smaller('sm');
+
+
 const props = defineProps({
   name: {
     type: String,

@@ -5,8 +5,9 @@ const year = new Date().getFullYear()
 </script>
 
 <template>
-  <div style="background-color: #1e1e1e;">
-    <div class="about h-container py-8 flex">
+  <div style=" background-image: linear-gradient(180deg, rgba(20,20,20), rgba(0,0,0,1))">
+    <waves></waves>
+    <div class="-sm:px-5 about h-container py-8 flex">
       <div class="h-container flex md:(justify-around w-full) -md:flex-col">
         <div v-for="info in about_infos" class="text-left -md:mb-5">
           <div class="text-white w-25 mb-4 pb-2 border-b-1 -md:font-bold">{{ info.title }}</div>
@@ -36,9 +37,11 @@ const year = new Date().getFullYear()
         </el-row>
       </el-card>
     </div>
-  </div>
-  <div class="bg-black text-center py-5">
-    <div class="text-gray-300 text-opacity-60 text-sm">Copyright © {{ year }} ET-FUN Technology Ltd</div>
-    <div class="text-gray-300 text-opacity-60 text-sm">Designed By ET-FUN Geeks</div>
+    <div class="text-center py-5">
+      <div
+        class="text-gray-300 text-opacity-60 text-sm"
+      >Copyright © {{ year }} ET-FUN Technology Ltd</div>
+      <div class="text-gray-300 text-opacity-60 text-sm">Designed By ET-FUN Geeks</div>
+    </div>
   </div>
 </template>

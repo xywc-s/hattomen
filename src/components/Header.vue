@@ -1,5 +1,5 @@
 <template>
-  <section class="header">
+  <section class="header -md:hidden">
     <div id="toolbar" class="bg-black text-gray-400">
       <div class="h-container flex flex-row-reverse items-center h-38px">
         <router-link to="/">
@@ -23,17 +23,17 @@
       id="navbar"
       class="relative bg-gray-50 transition duration-500 hover:bg-opacity-100 ease-in-out bg-opacity-0"
     >
-      <div class="h-container -md:hidden">
+      <div class="h-container">
         <ul class="flex">
           <li class="mr-8 pb-2 text-4xl text-orange-400" style="line-height: 4rem;">
             <router-link to="/">
-              <span :class="mdAndLarger ? 'font-faster font-normal' : ''">HATTOMEN</span>
+              <span class="font-faster font-normal">HATTOMEN</span>
             </router-link>
           </li>
-          <li class="btn group mx-2.5 mt-6 pb-2 cursor-pointer">
-            <span>Home</span>
+          <li class="btn mx-2.5 mt-6 pb-2 cursor-pointer">
+            <router-link to="/">Home</router-link>
           </li>
-          <li class="btn group mx-2.5 mt-6 pb-2 cursor-pointer">
+          <li class="btn mx-2.5 mt-6 pb-2 cursor-pointer">
             <span>Introduction</span>
           </li>
           <li class="btn group mx-2.5 mt-6 pb-2 cursor-pointer" v-for="menu in menus">
@@ -57,17 +57,51 @@
       </div>
     </div>
   </section>
+  <section class="md:hidden header h-48px bg-black border-b-0.5px border-opacity-0">
+    <transition name="fade">
+      <div class="px-3 flex h-full justify-between items-center">
+        <button
+          type="button"
+          class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+          aria-label="toggle menu"
+          @click.native="() => { menushow = !menushow; }"
+        >
+          <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+            <path
+              fill-rule="evenodd"
+              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+            />
+          </svg>
+        </button>
+        <div class="font-faster font-normal text-orange-400 text-3xl ring-offset-white shadow">
+          <span>HATTOMEN</span>
+        </div>
+        <div></div>
+      </div>
+    </transition>
+
+    <div class="bg-black p-5" :style="`display: ${menushow ? 'block' : 'none'}`">
+      <ul class="flex flex-col text-white all-child:mb-2">
+        <li class="btn mx-2.5 cursor-pointer">
+          <router-link to="/">Home</router-link>
+        </li>
+        <li class="btn mx-2.5 cursor-pointer" v-for="menu in menus">
+          <span>{{ menu.name }}</span>
+          <div v-for="child in menu.children">
+            <router-link :to="`/product/${child.path}`" class="block btn pl-3">{{ child.name }}</router-link>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
 </template>
 <script setup lang="ts">
 import { menus } from '~/data/nav';
-import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
 import { ref } from 'vue'
-
-const breakpoints = useBreakpoints(breakpointsTailwind)
-
-const mdAndLarger = breakpoints.greater('md')
+import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
 
 const currentImg = ref('')
+const menushow = ref(false)
 
 const menuHover = (menu) => {
   currentImg.value = menu.children[0].img
@@ -76,6 +110,13 @@ const menuHover = (menu) => {
 const btnHover = (child) => {
   currentImg.value = child.img
 }
+onBeforeRouteLeave(() => {
+  menushow.value = false
+})
+
+onBeforeRouteUpdate(() => {
+  menushow.value = false
+})
 
 </script>
 
