@@ -38,8 +38,8 @@
           </li>
           <li class="btn group mx-2.5 mt-6 pb-2 cursor-pointer" v-for="menu in menus">
             <span @mouseover.self="menuHover(menu)">{{ menu.name }}</span>
-            <div class="hidden absolute inset-x-0 t-0 py-7 bg-gray-50 group-hover:block">
-              <div class="flex">
+            <div class="hidden absolute inset-x-0 t-0 py-7 bg-gray-50 group-hover:(block)">
+              <div class="flex transition-all duration-600 ease-in">
                 <div class="min-w-1/3"></div>
                 <div class="ml-3/10">
                   <div v-for="child in menu.children" @mouseover="btnHover(child)">
@@ -58,8 +58,8 @@
     </div>
   </section>
   <section class="md:hidden header h-48px bg-black border-b-0.5px border-opacity-0">
-    <transition name="fade">
-      <div class="px-3 flex h-full justify-between items-center">
+    <transition name="fade" :duration="250" mode="in-out">
+      <div v-if="smallerMD" class="px-3 flex h-full justify-between items-center">
         <button
           type="button"
           class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400"
@@ -80,25 +80,31 @@
       </div>
     </transition>
 
-    <div class="bg-black p-5" :style="`display: ${menushow ? 'block' : 'none'}`">
-      <ul class="flex flex-col text-white all-child:mb-2">
-        <li class="btn mx-2.5 cursor-pointer">
-          <router-link to="/">Home</router-link>
-        </li>
-        <li class="btn mx-2.5 cursor-pointer" v-for="menu in menus">
-          <span>{{ menu.name }}</span>
-          <div v-for="child in menu.children">
-            <router-link :to="`/product/${child.path}`" class="block btn pl-3">{{ child.name }}</router-link>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <transition name="fade" :duration="250" mode="in-out">
+      <div v-show="menushow" class="bg-black p-5">
+        <ul class="flex flex-col text-white all-child:mb-2">
+          <li class="btn mx-2.5 cursor-pointer">
+            <router-link to="/">Home</router-link>
+          </li>
+          <li class="btn mx-2.5 cursor-pointer" v-for="menu in menus">
+            <span>{{ menu.name }}</span>
+            <div v-for="child in menu.children">
+              <router-link :to="`/product/${child.path}`" class="block btn pl-3">{{ child.name }}</router-link>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </transition>
   </section>
 </template>
 <script setup lang="ts">
 import { menus } from '~/data/nav';
 import { ref } from 'vue'
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
+
+const breakPoints = useBreakpoints(breakpointsTailwind);
+const smallerMD = breakPoints.smaller('md')
 
 const currentImg = ref('')
 const menushow = ref(false)
@@ -122,6 +128,16 @@ onBeforeRouteUpdate(() => {
 
 <style scoped>
 @import url("https://fonts.font.im/css?family=Monoton|Fredericka+the+Great|Faster+One");
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 
 .font-faster {
   font-family: "Faster One", cursive;

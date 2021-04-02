@@ -11,6 +11,9 @@ export default defineConfig({
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        'height': 'height'
+      },
       keyframes:{
         move: {
           '0%': { transform: 'translate3d(-90px, 0, 0)' },
