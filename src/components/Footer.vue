@@ -38,10 +38,8 @@ const year = new Date().getFullYear()
       </el-card>
     </div>
     <div class="text-center py-5">
-      <div
-        class="text-gray-300 text-opacity-60 text-sm"
-      >Copyright © {{ year }} ET-FUN Technology Ltd</div>
-      <div class="text-gray-300 text-opacity-60 text-sm">Designed By ET-FUN Geeks</div>
+      <div class="text-gray-300 text-opacity-60 text-sm">Copyright © {{ year }} VARIGLE LLC</div>
+      <div class="text-gray-300 text-opacity-60 text-sm">Designed By VARIGLE LLC</div>
     </div>
   </div>
 </template>
